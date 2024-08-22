@@ -9,6 +9,6 @@ import osvaldo.airport.app.data.local.entity.AirportEntity
 interface AirportDao {
 
     @Query("SELECT * FROM airport WHERE name LIKE :search||'%' OR iata_code LIKE :search||'%'")
-    fun getAirports(search: String): Flow<List<AirportEntity>>
+    fun searchAirports(search: String): Flow<List<AirportEntity>>
 
 }
